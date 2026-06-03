@@ -43,14 +43,14 @@ class AnagramFinder:
             sys.exit(1)
     
     def get_word_freq(self, word):
-        """Подсчёт частоты букв в слове"""
+        # Подсчёт частоты букв в слове
         freq = {}
         for ch in word:
             freq[ch] = freq.get(ch, 0) + 1
         return freq
     
     def can_form(self, source_freq, target_freq):
-        """Проверка возможности составить слово"""
+        # Проверка возможности составить слово
         for ch, cnt in target_freq.items():
             if source_freq.get(ch, 0) < cnt:
                 return False
